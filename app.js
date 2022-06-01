@@ -21,25 +21,25 @@ class Cat extends Animal {
     giveWater() {
         this.thirst -= 10;
         this.hunger += 10;
-        this.malevolence -10;
+        this.malevolence += 10; // changed to += from - (Dom)
     }
 
     ignore() {
         this.thirst += 10;
         this.hunger += 10;
-        this.malevolence += 10;
+        this.malevolence += 20;
     }
     hungerCheck(){
         if(this.hunger >= 100){
-            console.log("hunger end");
+            console.log("Your pet has perished from HUNGER!");
         }}
     thirstCheck(){
         if (this.thirst >= 100){
-            console.log('thirst end');
+            console.log('Your pet has perished from THIRST!');
         }}
     malevolenceCheck(){
         if(this.malevolence >= 100){
-            console.log('malevolence end');
+            console.log('Your pet has ran away and is plotting to kill you! You have brought this upon yourself');
         }
 }
 }
@@ -68,15 +68,15 @@ class Sloth extends Animal {
     }
     hungerCheck(){
         if(this.hunger >= 100){
-            console.log("hunger end");
+            console.log("Your pet has perished from HUNGER!");
         }}
     speedCheck(){
         if (this.speed >= 100){
-            console.log('speed end');
+            console.log('Your pet has become too addicted to thrills and become a daredevil stunt sloth');
         }}
     chillCheck(){
         if(this.chill <= 0){
-            console.log('chill end');
+            console.log('Your pet has become too chilled and elevated to a spiritual plane');
         }
 }
 }
@@ -94,25 +94,27 @@ class Dragon extends Animal {
     }
 
     feedCoal() {
+        this.hunger +=10;
         this.coal += 10;
         this.gaviscon -= 10;
     }
 
     feedGaviscon() {
+        this.hunger +=10;
         this.coal -= 10;
         this.gaviscon += 10;
     }
     hungerCheck(){
         if(this.hunger >= 100){
-            console.log("hunger end");
+            console.log("You pet has perished from HUNGER!");
         }}
     coalCheck(){
         if (this.coal <= 0){
-            console.log('coal end');
+            console.log("Your pet can't breathe fire and ran away in tears");
         }}
     gavisconCheck(){
         if(this.gaviscon <= 0){
-            console.log('gaviscon end');
+            console.log("Your pet's indigestion becomes to much and explodes");
         }
     }
     }

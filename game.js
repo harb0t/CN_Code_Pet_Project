@@ -65,7 +65,7 @@ const slothFn = async () => {
     const slothAction = await inquirer.prompt({
     type: "list",
     name: "action",
-    message: "What would you like to do with your new cat?",
+    message: "What would you like to do with your new sloth?",
     choices: [
         {
             key: "a",
@@ -122,7 +122,7 @@ const dragonFn = async () => {
     const dragonAction = await inquirer.prompt({
     type: "list",
     name: "action",
-    message: "What would you like to do with your new cat?",
+    message: "What would you like to do with your new dragon?",
     choices: [
         {
             key: "a",
@@ -217,11 +217,11 @@ try{
                 await catFn();
                 break;
             case 'sloth': 
-                myPet = new Sloth(petName, petAge, 0, 1, 100);
+                myPet = new Sloth(petName, petAge, 0, 1, 30);
                 await slothFn();
                 break;
             case 'dragon':
-                myPet = new Dragon(petName, petAge, 0, 100, 0);
+                myPet = new Dragon(petName, petAge, 0, 50, 50);
                 await dragonFn();
                 break;
             default:
