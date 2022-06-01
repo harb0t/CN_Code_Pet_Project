@@ -7,7 +7,7 @@ let myPet = {};
 const catFn = async () => {
     const catAction = await inquirer.prompt({
     type: "list",
-    name: "typeOfPet",
+    name: "action",
     message: "What would you like to do with your new cat?",
     choices: [
         {
@@ -27,14 +27,89 @@ const catFn = async () => {
         },
     ],
 });
-if(catAction.typeOfPet == 'feed'){
+if(catAction.action == 'feed'){
     await myPet.feed()
+    await catFn();
 }
-else if(catAction.typeOfPet == 'giveWater'){
+else if(catAction.action == 'giveWater'){
     await myPet.giveWater();
+    await catFn();
 }
-else if(catAction.typeOfPet == 'ignore'){
+else if(catAction.action == 'ignore'){
     await myPet.ignore();
+    await catFn();
+}}
+
+const slothFn = async () => {
+    const slothAction = await inquirer.prompt({
+    type: "list",
+    name: "action",
+    message: "What would you like to do with your sloth companion?",
+    choices: [
+        {
+            key: "a",
+            name: "Feed",
+            value: "feed",
+        },
+        {
+            key: "b",
+            name: "Hang Out",
+            value: "hangOut",
+        },
+        {
+            key: "c",
+            name: "Attach Rocket",
+            value: "attachRocket",
+        },
+    ],
+});
+if(slothAction.action == 'feed'){
+    await myPet.feed();
+    await slothFn();
+}
+else if(slothAction.action == 'hangOut'){
+    await myPet.hangOut();
+    await slothFn();
+}
+else if(slothAction.action == 'attachRocket'){
+    await myPet.attachRocket();
+    await slothFn();
+}}
+
+const dragonFn = async () => {
+    const dragonAction = await inquirer.prompt({
+    type: "list",
+    name: "action",
+    message: "What would you like to do with your Dragon?",
+    choices: [
+        {
+            key: "a",
+            name: "Feed Knight",
+            value: "feedKnight",
+        },
+        {
+            key: "b",
+            name: "Feed Coal",
+            value: "feedCoal",
+        },
+        {
+            key: "c",
+            name: "Feed Gaviscon",
+            value: "feedGaviscon",
+        },
+    ],
+});
+if(dragonAction.action == 'feedKnight'){
+    await myPet.feedKnight();
+    await dragonFn();
+}
+else if(dragonAction.action == 'feedCoal'){
+    await myPet.feedCoal();
+    await dragonFn();
+}
+else if(dragonAction.action == 'feedGaviscon'){
+    await myPet.feedGaviscon();
+    await dragonFn();
 }}
 
 
@@ -77,13 +152,14 @@ try{
             case 'cat':
                 myPet = new Cat(petName, petAge, 10, 10, 100);
                 await catFn();
-                await console.log(myPet);
                 break;
             case 'sloth': 
                 myPet = new Sloth(petName, petAge, 0, 1, 100);
+                await slothFn();
                 break;
             case 'dragon':
                 myPet = new Dragon(petName, petAge, 0, 100, 0);
+                await dragonFn();
                 break;
             default:
                 break;
