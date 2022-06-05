@@ -89,8 +89,8 @@ class Dragon extends Animal {
 
     feedKnight() {
         this.hunger -=10;
-        this.coal += 10;
-        this.gaviscon += 10;
+        this.coal -= 10;
+        this.gaviscon -= 10;
     }
 
     feedCoal() {

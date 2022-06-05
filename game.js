@@ -4,10 +4,13 @@ const { Sloth } = require("./app");
 const { Dragon } = require("./app");
 let myPet = {};
 
-const catFn = async () => {
+const catFn = async () => 
+
+{
     const catAction = await inquirer.prompt({
     type: "list",
     name: "action",
+    message: "test",
     message: "What would you like to do with your new cat?",
     choices: [
         {
@@ -60,6 +63,7 @@ else if(catAction.action == 'ignore'){
         myPet.malevolenceCheck();
     }
 }}
+
 
 const slothFn = async () => {
     const slothAction = await inquirer.prompt({
