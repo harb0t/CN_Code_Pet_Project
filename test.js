@@ -16,3 +16,5 @@ class Cat extends Animal {
 
 const bob = new Cat("john", 10, 20, 20, 100);
 console.log(bob);
+
+// test
